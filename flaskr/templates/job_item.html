@@ -1,0 +1,22 @@
+<li class="list-group-item list-group-item-action">
+    <h4 style="display: inline-block;">{{job['title']}}</h4>
+    <div><b>Location: </b>{{job['location']}}</div>
+    {% if 'salary' in job %}
+    <div class="mb-2"><b>Salary: </b>{{job['salary']}}</div>
+    {% endif %}
+    <button class="btn btn-outline-primary" >Apply</button>
+</li>
+
+<!-- <li class="list-group-item list-group-item-action">
+    <div style="display: inline-block;">Data Analyst</div>
+    <button class="btn btn-outline-primary" >Apply</button>
+</li>
+<li class="list-group-item list-group-item-action">Python Programmer
+    <button class="btn btn-outline-primary">Apply</button>
+</li>
+<li class="list-group-item list-group-item-action">Frontend Developer
+    <button class="btn btn-outline-primary">Apply</button>
+</li>
+<li class="list-group-item list-group-item-action">Backend Developer
+    <button class="btn btn-outline-primary">Apply</button>
+</li> -->
