@@ -17,14 +17,23 @@
     </style>
 </head>
 <body>
+    {% include 'header.html' %}
     <div class="container text-center">
         <h1 class="text-center mt-2 mb-4">Job Careers</h1>
         <img class="img-fluid" id="banner" src="../static/jobpage_banner.jpg" alt="jobpage_banner">
 
-        <div id="about">
-            <h3>About Careers</h3>
-            <p class="lead">Join us.
-                We believe that business is the greatest platform for change — and that together, we can improve the state of the world. With the world’s #1 customer relationship management (CRM) platform, your work will help businesses and communities achieve their most ambitious business plans, solve their biggest challenges, and harness their successes to leave our planet a little better than we found it. Are you ready to build a rewarding career and a better future for all?</p>
+        <div id="about" class="row mt-4">
+            <div class="col-1"></div>
+            <div class="col-4">
+                <h3 class=>About Careers</h3>
+                <p class="lead">Join us.
+                    We believe that business is the greatest platform for change — and that together, we can improve the state of the world. With the world’s #1 customer relationship management (CRM) platform, your work will help businesses and communities achieve their most ambitious business plans, solve their biggest challenges, and harness their successes to leave our planet a little better than we found it. Are you ready to build a rewarding career and a better future for all?</p>
+            </div>
+            <div class="col-5">
+                <img class="img-fluid" id="people_working" src="../static/people_working.jpg" alt="jobpage_banner">
+            </div>
+            <div class="col-1"></div>
+
         </div>
         <section id="jobs">
             <h4 class="mb-4 mt-4">Job Openings</h4>
@@ -39,5 +48,6 @@
             <button id="contactus" class="btn btn-info btn-lg">Contact us</button>
         </footer>
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>
