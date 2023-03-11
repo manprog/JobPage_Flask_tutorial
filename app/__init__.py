@@ -2,31 +2,33 @@ import os
 
 from flask import Flask, render_template, jsonify
 
-jobs_context = [
-            {
-                'id': 1,
-                'title': "Data Analyst",
-                'location': 'Bremen',
-                'salary': '50k'
-            },
-            {
-                'id': 2,
-                'title': "Python Programmer",
-                'location': 'Paris',
-                'salary': '60k'
-            },
-            {
-                'id': 1,
-                'title': "Frontend Developer",
-                'location': 'Berlin',
-                'salary': '45k'
-            },
-            {
-                'id': 1,
-                'title': "Backend Developer",
-                'location': 'Multan'
-            }
-            ]
+from .database import load_jobs_from_db
+
+# jobs_context = [
+#             {
+#                 'id': 1,
+#                 'title': "Data Analyst",
+#                 'location': 'Bremen',
+#                 'salary': '50k'
+#             },
+#             {
+#                 'id': 2,
+#                 'title': "Python Programmer",
+#                 'location': 'Paris',
+#                 'salary': '60k'
+#             },
+#             {
+#                 'id': 1,
+#                 'title': "Frontend Developer",
+#                 'location': 'Berlin',
+#                 'salary': '45k'
+#             },
+#             {
+#                 'id': 1,
+#                 'title': "Backend Developer",
+#                 'location': 'Multan'
+#             }
+#             ]
 
 
 app = Flask(__name__, instance_relative_config=True)
@@ -42,18 +44,14 @@ try:
 except OSError:
     pass
 
-# a simple page that says hello
-@app.route('/hello')
-def hello():
-    return 'Hello, World! Just testing'
 
 @app.route('/')
 def index():
-    return render_template('index.html', jobs = jobs_context)
+    return render_template('index.html', jobs = load_jobs_from_db())
 
 @app.route('/api/jobs')
 def jobs():
-    return jsonify(jobs_context)
+    return jsonify(load_jobs_from_db())
 
 if __name__ == '__main__':
     app.run(debug=True)
