@@ -4,7 +4,7 @@
     {% if job['salary'] is not none %}
     <div class="mb-2"><b>Salary: </b>{{job['salary']}}</div>
     {% endif %}
-    <button class="btn btn-outline-primary" >Apply</button>
+    <a href="/job/{{job['id']}}" class="btn btn-outline-primary" >Apply</a>
 </li>
 
 <!-- <li class="list-group-item list-group-item-action">
